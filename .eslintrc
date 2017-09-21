@@ -1,5 +1,36 @@
+//{
+//  parser: "babel-eslint",
+//  "plugins": [
+//    "react"
+//  ],
+//  "env": {
+//    "browser": true,
+//    "node": true
+//  },
+//  "rules": {
+//    "max-len": [1, 120, 2, {ignoreComments: true}],
+//    "prop-types": [2]
+//  },
+//  "globals": {
+//    "window": true,
+//    "document": false
+//  },
+//  "extends": ["eslint:recommended", "plugin:react/recommended"]
+//}
+
 {
-  "plugins": [
-    "react"
-  ]
+  parser: "babel-eslint",
+  "rules": {
+    "max-len": [1, 120, 2, {ignoreComments: true}],
+    "prop-types": [2]
+  },
+  "env": {
+        "browser": true,
+        "node": true
+  },
+  "globals": {
+        "window": true,
+        "document": false
+  },
+  "extends": ["airbnb-base"]
 }

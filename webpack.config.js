@@ -12,9 +12,13 @@ module.exports = {
         path: path.join(__dirname,'dist'),
         filename: 'app.bundle.js'
     },
+    resolve: {
+
+        extensions: ['.ts', '.js', '.html', '.css', '.less'],
+    },
     module: {
         loaders: [
-            {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
+            {test: /\.js$/, loader: ['babel-loader','eslint-loader'], exclude: /node_modules/},
             {test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/},
             {
                 test: /\.scss$/,
