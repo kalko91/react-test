@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import EditIcon from './images/edit.svg';
-import {Icon} from 'components/Icon.jsx';
+import {Icon} from 'components/Icon/Icon.jsx';
 import DeleteIcon from './images/delete.svg';
 import ArrowIcon from './images/arrow.svg';
 import EmailIcon from './images/email.svg';
@@ -9,7 +9,7 @@ import PhoneIcon from './images/phone.svg';
 //<Icon glyph={EditIcon.id} viewBox={EditIcon.viewBox} />
 import "./user_card.scss";
 
-export class UserCard extends Component {
+export default class UserCard extends Component {
     render() {
         return (
             <div className="card">

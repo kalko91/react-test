@@ -13,8 +13,11 @@ module.exports = {
         filename: 'app.bundle.js'
     },
     resolve: {
-
-        extensions: ['.ts', '.js', '.html', '.css', '.less'],
+        modules: [
+            "node_modules",
+            path.resolve(__dirname, "src")
+        ],
+        extensions: ['.jsx', '.js', '.html', '.css', '.scss'],
     },
     module: {
         loaders: [

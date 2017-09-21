@@ -1,7 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
 import './app.scss';
-// import UserCard from 'components';
+import UserCard from 'components/UserCard/UserCard.jsx';
 // console.log(styles);
 
 let Users = [
@@ -37,19 +37,17 @@ let Users = [
     },
 
 ];
-
 export default class App extends Component {
     render() {
         return (
             <div >
-                {/*{Users.map(function(object,i){*/}
-                    {/*return <UserCard/>*/}
-                {/*})}*/}
+                {Users.map(function(object,i){
+                    return <UserCard/>
+                })}
             </div>
         );
     }
 }
 
 App.propTypes = {
-
 };
