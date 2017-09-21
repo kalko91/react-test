@@ -9,9 +9,12 @@ let Users = [
         firstName: 'John',
         lastName: 'Smith',
         type: 'Father',
-        emails: ['john@gmail.com'],
+        emails: [
+            'john@gmail.com',
+            'john@gmail.com',
+        ],
         phones: [
-            '12025550147'
+            '+61412345678'
         ],
         action: 'plain'
     },
@@ -21,7 +24,8 @@ let Users = [
         type: 'Father',
         emails: ['john@gmail.com'],
         phones: [
-            '12025550147'
+            '+61412345678',
+            '+61412345678',
         ],
         action: 'edit'
     },
@@ -31,18 +35,18 @@ let Users = [
         type: 'Father',
         emails: ['john@gmail.com'],
         phones: [
-            '12025550147'
+            '+61412345678'
         ],
-        action: 'clickable'
+        action: 'detail'
     },
 
 ];
 export default class App extends Component {
     render() {
         return (
-            <div >
+            <div className="row">
                 {Users.map(function(object,i){
-                    return <UserCard/>
+                    return <UserCard obj={object} key={i}/>
                 })}
             </div>
         );
