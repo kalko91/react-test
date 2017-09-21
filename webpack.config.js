@@ -15,8 +15,28 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
-            {test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/}
-        ]
+            {test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/},
+            {
+                test: /\.scss$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader",
+                    options: {
+                        modules: true,
+                        localIdentName: '[name]__[local]___[hash:base64:5]'
+                    }// translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader",
+                    options: {
+                        modules: true,
+                        sourceMap: true,
+                        importLoaders: 2,
+                        localIdentName: '[name]__[local]___[hash:base64:5]'
+                    }// compiles Sass to CSS
+                }]
+            }
+        ],
     },
     devServer: {
         contentBase: path.join(__dirname,'dist'),
