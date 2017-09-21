@@ -20,21 +20,28 @@ module.exports = {
                 test: /\.scss$/,
                 use: [{
                     loader: "style-loader" // creates style nodes from JS strings
+                },
+                    {
+                    loader: "css-loader" // translates CSS into CommonJS
                 }, {
-                    loader: "css-loader",
-                    options: {
-                        modules: true,
-                        localIdentName: '[name]__[local]___[hash:base64:5]'
-                    }// translates CSS into CommonJS
-                }, {
-                    loader: "sass-loader",
-                    options: {
-                        modules: true,
-                        sourceMap: true,
-                        importLoaders: 2,
-                        localIdentName: '[name]__[local]___[hash:base64:5]'
-                    }// compiles Sass to CSS
-                }]
+                    loader: "sass-loader" // compiles Sass to CSS
+                },
+                    // {
+                    //     loader: "css-loader",
+                    //     options: {
+                    //         modules: true,
+                    //         localIdentName: '[name]__[local]___[hash:base64:5]'
+                    //     }// translates CSS into CommonJS
+                    // }, {
+                    //     loader: "sass-loader",
+                    //     options: {
+                    //         modules: true,
+                    //         sourceMap: true,
+                    //         importLoaders: 2,
+                    //         localIdentName: '[name]__[local]___[hash:base64:5]'
+                    //     }// compiles Sass to CSS
+                    // }
+                ]
             }
         ],
     },
