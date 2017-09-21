@@ -42,8 +42,16 @@ module.exports = {
                     //     }// compiles Sass to CSS
                     // }
                 ]
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    { loader: 'svg-sprite-loader', options: { } },
+                    'svg-fill-loader',
+                    'svgo-loader'
+                ]
             }
-        ],
+        ]
     },
     devServer: {
         contentBase: path.join(__dirname,'dist'),
